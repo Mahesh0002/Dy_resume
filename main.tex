@@ -1,0 +1,181 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[T1]{fontenc}
+
+%----------FONT OPTIONS----------
+\usepackage{charter} % Professional Serif Font
+
+%----------PAGE SETUP----------
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%----------SECTION FORMATTING----------
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%----------CUSTOM COMMANDS----------
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%----------DYNAMIC STATS SETUP----------
+% This connects your resume to the Python script.
+% If the file exists, it uses the real numbers. If not, it defaults to placeholders.
+\IfFileExists{dynamic_stats.tex}{
+    \input{dynamic_stats}
+}{
+    \newcommand{\leetcodeRating}{0}
+    \newcommand{\leetcodeSolved}{0}
+    \newcommand{\codeforcesRating}{0}
+    \newcommand{\lastUpdated}{Not Updated}
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+    \textbf{\Huge \scshape Ganji Mahesh} \\ \vspace{5pt}
+    \small +91 7032436352 $|$ \href{mailto:maheshganji057@gmail.com}{\underline{maheshganji057@gmail.com}} $|$ 
+    \href{https://linkedin.com/in/g-mahesh-781237283}{\underline{g-mahesh-781237283}} $|$
+    \href{https://github.com/Mahesh0002}{\underline{github.com/Mahesh0002}}
+\end{center}
+
+
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Vardhaman College of Engineering}{Hyderabad, Telangana}
+      {B.Tech in Computer Science}{2023 -- Present}
+      
+    \resumeSubheading
+      {Sri Chaitanya Junior Kalasala}{Hyderabad, Telangana}
+      {Intermediate (MPC)}{2021 -- 2023}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Rejolt}{Hyderabad, Telangana}
+      {Fellowship}{Jul 2025 -- Present}
+      \resumeItemListStart
+        \resumeItem{Gained hands-on experience with design and prototyping tools like {Figma} to create user-centric interfaces.}
+        \resumeItem{Collaborated with the development team to understand the transition from design wireframes to functional code.}
+        \resumeItem{Assisted in designing UI components and streamlined user workflows for web applications.}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+
+      % PROJECT 1: Car Damage
+      \resumeProjectHeading
+          {\textbf{Car Damage Classification} $|$ \emph{Python, YOLO-v11, EfficientNet, ViT}}{Aug 2025 -- Jan 2026}
+          \resumeItemListStart
+            \resumeItem{Engineered a damage assessment pipeline utilizing {YOLO-v11} for precise object localization on vehicle images.}
+            \resumeItem{Conducted a comparative analysis between {EfficientNet} and {Vision Transformers} to determine the optimal architecture for damage severity classification.}
+            \resumeItem{Benchmarked model performance across categories (minor, moderate, severe), achieving higher accuracy by selecting the best-performing architecture for the final solution.}
+          \resumeItemListEnd
+
+      % PROJECT 2: Jōtai
+      \resumeProjectHeading
+          {\textbf{Jōtai: Advanced Productivity Dashboard} $|$ \emph{React.js, Tailwind CSS}}{Jan 2025 -- May 2025}
+          \resumeItemListStart
+            \resumeItem{Architected a dynamic dashboard as a technical benchmark to rigorously test and demonstrate proficiency in {React} patterns and state management.}
+            \resumeItem{Leveraged {Tailwind CSS} to master utility-first styling, creating a complex, responsive grid layout to evaluate UI rendering performance.}
+            \resumeItem{Focused on component modularity and clean code principles to validate personal growth in frontend architecture.}
+          \resumeItemListEnd
+
+      % PROJECT 3: Student Community Forum
+      \resumeProjectHeading
+          {\textbf{Student Collaboration Hub} $|$ \emph{JavaScript, HTML5, CSS3}}{Jul 2024 -- Nov 2024}
+          \resumeItemListStart
+            \resumeItem{Designed a web-based prototype to unify asynchronous discussions and synchronous video interaction (Zoom-like interface) into a single platform.}
+            \resumeItem{Implemented core functionality including user authentication, threaded discussion boards, and search features using vanilla {JavaScript}.}
+            \resumeItem{Created a seamless UI to demonstrate the concept of bridging the gap between study forums and live study groups.}
+          \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small\item{
+     \textbf{Languages}{: Java, Python, C/C++, SQL, JavaScript, HTML/CSS} \\
+     \textbf{Machine Learning}{: YOLO, EfficientNet, Transformers, PyTorch, Scikit-learn, Pandas} \\
+     \textbf{Web Development}{: React.js, Tailwind CSS, JSP, JDBC, Servlets, Node.js} \\
+     \textbf{Tools \& Platforms}{: Git, VS Code, Android Studio, Blender, {Figma}}
+    }
+ \end{itemize}
+
+ 
+%-----------ACHIEVEMENTS-----------
+% This section now pulls data from dynamic_stats.tex
+\section{Achievements}
+ \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
+    \small
+    \item \textbf{LeetCode:} Max Rating \textbf{\leetcodeRating} $|$ Solved \textbf{\leetcodeSolved}+ Problems (Combined)
+    \item \textbf{Codeforces:} Max Rating \textbf{\codeforcesRating}
+    \item \textbf{English Proficiency:} C1 Level (Lingua Business)
+    
+    % Optional: Uncomment this line if you want the date visible on the PDF
+    % \item \textit{\footnotesize (Stats last auto-updated on \lastUpdated)}
+ \end{itemize}
+
+\end{document}
