@@ -1,0 +1,52 @@
+name: Update Resume Stats
+
+on:
+  schedule:
+    - cron: "0 0 * * 0" # Runs every Sunday at midnight
+  workflow_dispatch: # Allows you to click "Run Now" manually
+
+permissions:
+  contents: write
+
+jobs:
+  update-and-build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Install Dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Run Update Script
+        run: python update_stats.py
+
+      - name: Commit Changes
+        run: |
+          git config --global user.name 'GitHub Action'
+          git config --global user.email 'action@github.com'
+          if [[ -n $(git status -s dynamic_stats.tex) ]]; then
+            git add dynamic_stats.tex
+            git commit -m "Auto-update resume stats"
+            git push
+          else
+            echo "No changes in stats."
+          fi
+
+      - name: Compile LaTeX PDF
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+      - name: Upload PDF
+        uses: actions/upload-artifact@v3
+        with:
+          name: Updated_Resume
+          path: main.pdf
