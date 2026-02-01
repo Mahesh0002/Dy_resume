@@ -14,10 +14,10 @@ jobs:
 
     steps:
       - name: Checkout Code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
           python-version: "3.9"
 
@@ -32,6 +32,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
+          # Check if the file changed
           if [[ -n $(git status -s dynamic_stats.tex) ]]; then
             git add dynamic_stats.tex
             git commit -m "Auto-update resume stats"
@@ -46,7 +47,7 @@ jobs:
           root_file: main.tex
 
       - name: Upload PDF
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4 # <--- Updated to v4 (The Fix)
         with:
           name: Updated_Resume
           path: main.pdf
