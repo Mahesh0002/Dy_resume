@@ -32,7 +32,7 @@ jobs:
         run: |
           git config --global user.name 'GitHub Action'
           git config --global user.email 'action@github.com'
-          # Check if the file changed
+          # Check if the file changed before committing
           if [[ -n $(git status -s dynamic_stats.tex) ]]; then
             git add dynamic_stats.tex
             git commit -m "Auto-update resume stats"
@@ -46,8 +46,17 @@ jobs:
         with:
           root_file: main.tex
 
-      - name: Upload PDF
-        uses: actions/upload-artifact@v4 # <--- Updated to v4 (The Fix)
+      # --- NEW STEP: Rename file for the download link ---
+      - name: Rename PDF
+        run: mv main.pdf Mahesh_Resume.pdf
+
+      # --- NEW STEP: Publish to Releases ---
+      - name: Upload Release
+        uses: softprops/action-gh-release@v1
         with:
-          name: Updated_Resume
-          path: main.pdf
+          tag_name: live # The tag will always be "live"
+          name: Live Resume (Latest) # Title of the release
+          files: Mahesh_Resume.pdf
+          overwrite: true # Overwrite the old file with the new one
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
