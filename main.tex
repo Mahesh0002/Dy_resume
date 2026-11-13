@@ -10,6 +10,7 @@
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage[T1]{fontenc}
+\usepackage{booktabs}
 
 %----------FONT OPTIONS----------
 \usepackage{charter} % Professional Serif Font
@@ -21,12 +22,12 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
-% Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+% Adjust margins to maximize space for a single page
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-0.7in}
+\addtolength{\textheight}{1.5in}
 
 \urlstyle{same}
 
@@ -36,8 +37,8 @@
 
 %----------SECTION FORMATTING----------
 \titleformat{\section}{
-  \vspace{-4pt}\scshape\raggedright\large
-}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+  \vspace{-8pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-8pt}]
 
 %----------CUSTOM COMMANDS----------
 \newcommand{\resumeItem}[1]{
@@ -47,34 +48,33 @@
 }
 
 \newcommand{\resumeSubheading}[4]{
-  \vspace{-1pt}\item
+  \vspace{-2pt}\item
     \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
 }
 
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+\newcommand{\resumeProjectHeading}[4]{
+    \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
+      \small\emph{#3} & \small#4 \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-6pt}}
 
 %----------DYNAMIC STATS SETUP----------
-% This connects your resume to the Python script.
-% If the file exists, it uses the real numbers. If not, it defaults to placeholders.
 \IfFileExists{dynamic_stats.tex}{
     \input{dynamic_stats}
 }{
-    \newcommand{\leetcodeRating}{0}
-    \newcommand{\leetcodeSolved}{0}
-    \newcommand{\codeforcesRating}{0}
+    \newcommand{\leetcodeRating}{1894}
+    \newcommand{\leetcodeSolved}{411}
+    \newcommand{\codeforcesRating}{1406}
     \newcommand{\lastUpdated}{Not Updated}
 }
 
@@ -85,100 +85,99 @@
 
 %----------HEADER----------
 \begin{center}
-    \textbf{\Huge \scshape Ganji Mahesh} \\ \vspace{5pt}
+    \textbf{\Huge \scshape Ganji Mahesh} \\ \vspace{4pt}
     \small +91 7032436352 $|$ \href{mailto:maheshganji057@gmail.com}{\underline{maheshganji057@gmail.com}} $|$ 
-    \href{https://linkedin.com/in/g-mahesh-781237283}{\underline{linkedin.com/in/g-mahesh-781237283}} $|$
-    \href{https://github.com/Mahesh0002}{\underline{github.com/Mahesh0002}} \\ \vspace{3pt}
-    \small \textit{Computer Science undergraduate building full-stack products and LLM-powered agent systems.}
+    \href{https://www.linkedin.com/in/g-mahesh-781237283}{\underline{linkedin.com/in/g-mahesh-781237283}} $|$
+    \href{https://github.com/Mahesh0002}{\underline{github.com/Mahesh0002}}
 \end{center}
+\vspace{-8pt}
 
-
+%-----------EDUCATION-----------
 \section{Education}
   \resumeSubHeadingListStart
+
     \resumeSubheading
       {Vardhaman College of Engineering}{Hyderabad, Telangana}
-      {B.Tech in Computer Science}{2023 -- Present}
-      
+      {B.Tech in Computer Science}{2023 -- 2027 (Expected)}
+
     \resumeSubheading
       {Sri Chaitanya Junior Kalasala}{Hyderabad, Telangana}
       {Intermediate (MPC)}{2021 -- 2023}
-  \resumeSubHeadingListEnd
 
+  \resumeSubHeadingListEnd
 
 %-----------EXPERIENCE-----------
 \section{Experience}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Rejolt}{Hyderabad, Telangana}
-      {Fellowship}{Jul 2025 -- Present}
+      {Ausnext Technologies (AIRA Automations)}{Remote, Australia}
+      {Operations \& UI Workflow Assistant Intern}{Apr 2026 -- Jun 2026}
       \resumeItemListStart
-        \resumeItem{Designed user-centric interfaces and high-fidelity prototypes in {Figma} for web applications.}
-        \resumeItem{Partnered with developers to translate wireframes into functional UI and simplify multi-step workflows.}
+        \resumeItem{Researched and curated structured data for running events across Australia---dates, distances, locations, and registration details---for the \href{https://ausruncalendar.au}{\underline{Aus Run Calendar}} platform.}
+        \resumeItem{Managed event listings by category and supported Fly.io production operations, including instance start/stop, deployment monitoring, and uptime checks.}
+        \resumeItem{Partnered with the product team on UI flow, user roles, and event-placement logic while maintaining high data accuracy across published records.}
       \resumeItemListEnd
 
   \resumeSubHeadingListEnd
-
 
 %-----------PROJECTS-----------
 \section{Projects}
     \resumeSubHeadingListStart
 
-      % PROJECT 1: Jotai (full-stack + agentic AI)
+      % PROJECT 1: Jotai
       \resumeProjectHeading
-          {\textbf{J\=otai: Productivity OS + Agentic Assistant} $|$ \emph{React, Node.js, MongoDB, FastAPI} $|$ \href{https://github.com/Mahesh0002/Jotai}{\underline{code}}}{Jan 2025 -- Present}
+          {\textbf{J\=otai: Gamified Productivity Platform with AI Agent Service}}{2026 -- Present}
+          {React, Tailwind CSS, React Query, Node.js, Express, MongoDB, Python, FastAPI, Gemini API, Redis}{\href{https://github.com/Mahesh0002/Jotai}{\underline{GitHub}}}
           \resumeItemListStart
-            \resumeItem{Built a full-stack productivity platform (tasks, focus blocks, habits, goals, analytics) with a React/TypeScript client, an Express/Mongoose REST API, and a separate Python FastAPI agent service.}
-            \resumeItem{Designed a provider-agnostic LLM layer (Gemini and a deterministic test stub) with automatic function calling disabled, keeping tool selection, validation, and execution explicit and auditable.}
-            \resumeItem{Implemented an N-way intent router (task/goal/habit/plan/insight) with exact triggers, keyword scoring, and LLM fallback, plus a single-use, TTL-bound confirmation gate that replays stored parameters to prevent payload swaps.}
-            \resumeItem{Moved duration estimates, habit rates/streaks, and preference profiles into deterministic Python so the LLM never computes them; schedule conflicts trigger a bounded three-attempt self-correction loop.}
-            \resumeItem{Hardened service-to-service auth with timing-safe token comparison and JWT validation; added 65 tests (52 Python, 13 Node) covering routing, replay protection, statistics, and authorization.}
+            \resumeItem{Building a full-stack productivity platform; four of eight planned modules are built (Tasks, Focus Plan, Focus Workspace, Habits). Currently runs locally.}
+            \resumeItem{Built the J\=otai Runner, a Python \textbf{FastAPI} service with a custom agent orchestrator on the \textbf{Gemini} SDK that routes user intents to function-calling actions on tasks, goals, and habits via REST, plus a \textbf{Redis} event consumer for triggered events.}
           \resumeItemListEnd
 
       % PROJECT 2: Project OMEGA
       \resumeProjectHeading
-          {\textbf{Project OMEGA: Neuro-Symbolic Physics Agent} $|$ \emph{Python, PyTorch, SymPy, MCTS} $|$ \href{https://github.com/Mahesh0002/projectOmega}{\underline{code}}}{Feb 2026 -- Present}
+          {\textbf{Project OMEGA: Sovereign Discovery Engine v2.0}}{Feb 2026 -- Present}
+          {Python, PyTorch, C++}{\href{https://github.com/Mahesh0002/projectOmega}{\underline{GitHub}}}
           \resumeItemListStart
-            \resumeItem{Designed a hybrid architecture combining \textbf{Monte Carlo Tree Search} for strategic exploration with a \textbf{transformer-based} policy network for symbolic regression.}
-            \resumeItem{Engineered {``Iron Dome,''} a differentiable PyTorch physics kernel that optimizes symbolic constants by gradient descent within a discrete search space.}
-            \resumeItem{Developed {``Protocol Zero,''} an iterative residual-learning algorithm (``onion peeling'') that decomposes multi-body systems into constituent physical laws.}
-            \resumeItem{Recovered the double-pendulum governing equation ($R^2 \approx 0.84$) and inverse-law relationships in noisy gravitational data.}
+            \resumeItem{Built a neuro-symbolic AI engine that automatically discovers closed-form mathematical equations governing chaotic physical systems directly from noisy sensor data, combining a \textbf{Transformer}-based policy network with \textbf{Monte Carlo Tree Search (MCTS)} for equation search.}
+            \resumeItem{Designed a physics-aware optimization pipeline using \textbf{L-BFGS} to fit model constants, paired with a Jacobian-based causal-relevance filter to reject spurious correlations ensuring discovered equations reflect true physical relationships.}
+            \resumeItem{Improved search efficiency with state hashing to eliminate redundant equation evaluations in tree search.}
           \resumeItemListEnd
 
-      % PROJECT 3: Car Damage
+      % PROJECT 3: Predictive Damage Classification Pipeline
       \resumeProjectHeading
-          {\textbf{Car Damage Classification} $|$ \emph{Python, YOLO-v11, EfficientNet, ViT}}{Aug 2025 -- Jan 2026}
+          {\textbf{Predictive Damage Classification Pipeline}}{Aug 2025 -- Jan 2026}
+          {Python, FastAPI, YOLO-v11, EfficientNet, CNN-BiLSTM}{\href{https://github.com/Mahesh0002/Accident-Severity}{\underline{GitHub}} $|$ \href{https://trafficaccidentseverity.l7310956.workers.dev/}{\underline{Demo}}}
           \resumeItemListStart
-            \resumeItem{Built and benchmarked a {YOLO-v11} + {EfficientNet}/ViT pipeline for vehicle-damage localization and severity classification.}
+            \resumeItem{Designed a three-phase computer-vision pipeline to classify vehicular accident severity (minor/moderate/severe): image-based, video-based temporal, and edge deployment on low-power hardware (e.g., Raspberry Pi) planned next.}
+            \resumeItem{Built and shipped Phase 1 (image classification) using \textbf{YOLO-v11} for damage localization and \textbf{EfficientNet} for severity classification, achieving \textbf{73.79\%} peak accuracy on static images. Served through a \textbf{FastAPI} backend hosted on Hugging Face.}
+            \resumeItem{Currently developing Phase 2 (video-based classification) with a hybrid \textbf{CNN-BiLSTM} architecture to capture temporal crash dynamics, reaching \textbf{56.89\%} accuracy while benchmarking alternative architectures to improve performance.}
           \resumeItemListEnd
 
     \resumeSubHeadingListEnd
 
-
 %-----------TECHNICAL SKILLS-----------
 \section{Technical Skills}
- \begin{itemize}[leftmargin=0.15in, label={}]
+ \begin{itemize}[leftmargin=0.15in, label={}, itemsep=-2pt]
     \small\item{
-     \textbf{Languages}{: Python, Java, C/C++, TypeScript, JavaScript, SQL, HTML/CSS} \\
-     \textbf{AI / ML}{: PyTorch, Transformers, YOLO, EfficientNet, Scikit-learn, Pandas, LLM tool calling} \\
-     \textbf{Backend}{: Node.js, Express, FastAPI, REST APIs, MongoDB/Mongoose, Redis, JWT} \\
-     \textbf{Frontend}{: React.js, Tailwind CSS, TanStack Query} \\
-     \textbf{Tools}{: Git, GitHub Actions, pytest, Linux, Figma, VS Code}
+     \textbf{Languages}{: Python, Java, C++, C, SQL, JavaScript, HTML/CSS} \\
+     \textbf{Backend \& APIs}{: FastAPI, Node.js, Express.js, RESTful APIs, MongoDB, Redis, JSP, JDBC, Servlets} \\
+     \textbf{Frontend}{: React.js, React Query, Tailwind CSS} \\
+     \textbf{Machine Learning \& AI}{: PyTorch, Gemini API (function calling), YOLO-v11, EfficientNet, CNN-BiLSTM, Transformers} \\
+     \textbf{Cloud Platforms}{: AWS, Google Cloud (Vertex AI), Amazon Bedrock} \\
+     \textbf{Core Computer Science}{: DSA, OOP, DBMS, Operating Systems, Computer Networking, System Design (HLD/LLD)} \\
+     \textbf{Tools \& Platforms}{: Git, GitHub, VS Code, Linux, Figma}
     }
  \end{itemize}
+ \vspace{-4pt}
 
- 
-%-----------ACHIEVEMENTS-----------
-% This section now pulls data from dynamic_stats.tex
-\section{Achievements}
- \begin{itemize}[leftmargin=0.15in, label=$\bullet$]
+%-----------CERTIFICATIONS & ACHIEVEMENTS-----------
+\section{Certifications \& Achievements}
+ \begin{itemize}[leftmargin=0.15in, label=$\bullet$, itemsep=0pt, parsep=0pt, topsep=2pt]
     \small
-    \item \textbf{LeetCode:} Max Rating \textbf{\leetcodeRating} $|$ Solved \textbf{\leetcodeSolved}+ Problems
-    \item \textbf{Codeforces:} Max Rating \textbf{\codeforcesRating} (Specialist)
-    \item \textbf{English Proficiency:} C1 Level (Lingua Business)
-    
-    % Optional: Uncomment this line if you want the date visible on the PDF
-    % \item \textit{\footnotesize (Stats last auto-updated on \lastUpdated)}
+    \item \textbf{Certifications:} Model Context Protocol, Claude with Amazon Bedrock, Claude with Google Cloud Vertex AI, Claude 101 \& Code 101; AWS Academy ML Foundations and Cloud Foundations; Smart Interviews 'Smart Coder'.
+    \item \textbf{Competitive Programming:} Solved \textbf{500+} DSA problems across \textbf{LeetCode, Codeforces, and CSES}; peak LeetCode rating \textbf{\leetcodeRating}, Codeforces rating 1406.
+    \item \textbf{English Proficiency:} C1 Level (Lingua Business).
  \end{itemize}
 
 \end{document}
