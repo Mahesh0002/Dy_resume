@@ -1,0 +1,10 @@
+# Python
+__pycache__/
+*.pyc
+
+# LaTeX build artifacts
+main.pdf
+main.aux
+main.log
+main.out
+main.synctex.gz

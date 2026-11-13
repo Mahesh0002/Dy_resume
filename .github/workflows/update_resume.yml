@@ -52,7 +52,7 @@ jobs:
 
       # --- NEW STEP: Publish to Releases ---
       - name: Upload Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: live # The tag will always be "live"
           name: Live Resume (Latest) # Title of the release
